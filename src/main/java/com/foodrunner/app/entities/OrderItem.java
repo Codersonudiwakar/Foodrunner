@@ -1,5 +1,7 @@
 package com.foodrunner.app.entities;
 
+import jakarta.persistence.*;
+
 @Entity
 public class OrderItem {
     @Id

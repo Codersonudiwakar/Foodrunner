@@ -3,10 +3,12 @@ package com.foodrunner.app.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.foodrunner.app.Repository.MenuRepository;
 import com.foodrunner.app.entities.Menu;
 
+@Service
 public class MenuServiceImpl implements MenuService {
 	
 	@Autowired

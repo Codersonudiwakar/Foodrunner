@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.foodrunner.app.entities.FoodItem;
 import com.foodrunner.app.service.FoodItemService;
+
 @RestController
 public class FoodItemController {
 	
 	@Autowired
 	private FoodItemService foodService;
 	
-    @PostMapping
+    @PostMapping("/aadFood")
     public FoodItem createMenu(@RequestBody FoodItem menu) {
         return foodService.addFoodItem(menu);
     }

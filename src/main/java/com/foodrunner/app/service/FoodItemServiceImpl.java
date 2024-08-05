@@ -30,4 +30,8 @@ public class FoodItemServiceImpl implements FoodItemService {
 		return getFoodList;
 	}
 
+	public List<FoodItem> searchFoodItems(String keyword) {
+        return itemRepo.findByKeyword(keyword);
+    }
+
 }

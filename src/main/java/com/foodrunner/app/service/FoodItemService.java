@@ -7,5 +7,6 @@ import com.foodrunner.app.entities.FoodItem;
 public interface FoodItemService {
 	FoodItem addFoodItem(FoodItem foodItem);
 	List<FoodItem> getFoodByCategory(String category);
+	public List<FoodItem> searchFoodItems(String keyword);
 
 }

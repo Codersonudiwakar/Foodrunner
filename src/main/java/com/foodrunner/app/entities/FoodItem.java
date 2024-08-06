@@ -14,7 +14,6 @@ public class FoodItem {
 	private String foodCategory;
 	private String foodPrice;
 	private String foodRestaurant;
-	
 	public FoodItem() {
 	}
 	public FoodItem(Long foodId, String foodName, String foodCategory, String foodPrice, String foodRestaurant) {

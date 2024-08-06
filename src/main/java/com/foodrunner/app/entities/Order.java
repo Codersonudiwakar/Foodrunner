@@ -20,21 +20,33 @@ public class Order {
     private Long id;
     private LocalDateTime orderDate;
     private String status;
-
+    private Integer quantity;
+    @ManyToOne
+    @JoinColumn(name = "food_Id")
+    private FoodItem foodItem;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
+    
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Payment payment;
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems;
+	public Order() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-	public Order(Long id, LocalDateTime orderDate, String status, User user, List<OrderItem> orderItems) {
+	public Order(Long id, LocalDateTime orderDate, String status, Integer quantity, FoodItem foodItem, User user,
+			Payment payment) {
 		super();
 		this.id = id;
 		this.orderDate = orderDate;
 		this.status = status;
+		this.quantity = quantity;
+		this.foodItem = foodItem;
 		this.user = user;
-		this.orderItems = orderItems;
+		this.payment = payment;
 	}
 
 	public Long getId() {
@@ -61,6 +73,22 @@ public class Order {
 		this.status = status;
 	}
 
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public FoodItem getFoodItem() {
+		return foodItem;
+	}
+
+	public void setFoodItem(FoodItem foodItem) {
+		this.foodItem = foodItem;
+	}
+
 	public User getUser() {
 		return user;
 	}
@@ -69,14 +97,15 @@ public class Order {
 		this.user = user;
 	}
 
-	public List<OrderItem> getOrderItems() {
-		return orderItems;
+	public Payment getPayment() {
+		return payment;
 	}
 
-	public void setOrderItems(List<OrderItem> orderItems) {
-		this.orderItems = orderItems;
+	public void setPayment(Payment payment) {
+		this.payment = payment;
 	}
-
-    // getters and setters
+    
+    
+    
 }
 

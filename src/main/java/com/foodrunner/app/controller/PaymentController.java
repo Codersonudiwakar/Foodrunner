@@ -9,7 +9,7 @@ import com.foodrunner.app.service.PaymentService;
 import org.springframework.beans.factory.annotation.*;
 
 @RestController
-@RequestMapping("/api/payments")
+@RequestMapping("/foodRunner/payments")
 public class PaymentController {
     @Autowired
     private PaymentService paymentService;

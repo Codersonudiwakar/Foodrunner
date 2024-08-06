@@ -8,7 +8,7 @@ import com.foodrunner.app.service.OrderService;
 import org.springframework.beans.factory.annotation.*;
 
 @RestController
-@RequestMapping("/api/orders")
+@RequestMapping("/foodRunner/order")
 public class OrderController {
     @Autowired
     private OrderService orderService;

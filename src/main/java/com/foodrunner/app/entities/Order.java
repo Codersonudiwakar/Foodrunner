@@ -29,12 +29,12 @@ public class Order {
     private User user;
     
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "payment_Id")
     private Payment payment;
 
 	public Order() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Order(Long id, LocalDateTime orderDate, String status, Integer quantity, FoodItem foodItem, User user,

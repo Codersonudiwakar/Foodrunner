@@ -8,7 +8,7 @@ import com.foodrunner.app.service.MenuService;
 import org.springframework.beans.factory.annotation.*;
 
 @RestController
-@RequestMapping("/api/menus")
+@RequestMapping("/foodRunner/menu")
 public class MenuController {
     @Autowired
     private MenuService menuService;

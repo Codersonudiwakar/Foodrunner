@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long paymentId;
     private Double amount;
     private LocalDateTime paymentDate;
     private String paymentMethod;
@@ -21,7 +21,7 @@ public class Payment {
 	public Payment(Long id, Double amount, LocalDateTime paymentDate, String paymentMethod, String paymentStatus,
 			Order order) {
 		super();
-		this.id = id;
+		this.paymentId = id;
 		this.amount = amount;
 		this.paymentDate = paymentDate;
 		this.paymentMethod = paymentMethod;
@@ -30,11 +30,11 @@ public class Payment {
 	}
 
 	public Long getId() {
-		return id;
+		return paymentId;
 	}
 
 	public void setId(Long id) {
-		this.id = id;
+		this.paymentId = id;
 	}
 
 	public Double getAmount() {

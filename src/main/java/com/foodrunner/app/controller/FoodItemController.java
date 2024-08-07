@@ -17,7 +17,7 @@ import com.foodrunner.app.service.FoodItemService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-@RequestMapping("/foodRunner/foodItem")
+@RequestMapping("/foodRunner")
 public class FoodItemController {
 	
 	@Autowired

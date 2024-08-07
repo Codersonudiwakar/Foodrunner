@@ -7,7 +7,7 @@ public class Cart {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String cartId;
+	private Long cartId;
 	private Long userId;
 	
 	 @OneToOne(cascade = CascadeType.ALL)
@@ -19,18 +19,18 @@ public class Cart {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Cart(String cartId, Long userId, FoodItem foodItem) {
+	public Cart(Long cartId, Long userId, FoodItem foodItem) {
 		super();
 		this.cartId = cartId;
 		this.userId = userId;
 		this.foodItem = foodItem;
 	}
 
-	public String getCartId() {
+	public Long getCartId() {
 		return cartId;
 	}
 
-	public void setCartId(String cartId) {
+	public void setCartId(Long cartId) {
 		this.cartId = cartId;
 	}
 

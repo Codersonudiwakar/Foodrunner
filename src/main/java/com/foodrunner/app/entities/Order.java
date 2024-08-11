@@ -27,18 +27,10 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-    
-    @ManyToOne
-    @JoinColumn(name = "payment_Id")
-    private Payment payment;
-
 	public Order() {
 		super();
-		
 	}
-
-	public Order(Long id, LocalDateTime orderDate, String status, Integer quantity, FoodItem foodItem, User user,
-			Payment payment) {
+	public Order(Long id, LocalDateTime orderDate, String status, Integer quantity, FoodItem foodItem, User user) {
 		super();
 		this.id = id;
 		this.orderDate = orderDate;
@@ -46,66 +38,43 @@ public class Order {
 		this.quantity = quantity;
 		this.foodItem = foodItem;
 		this.user = user;
-		this.payment = payment;
 	}
-
 	public Long getId() {
 		return id;
 	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public LocalDateTime getOrderDate() {
 		return orderDate;
 	}
-
 	public void setOrderDate(LocalDateTime orderDate) {
 		this.orderDate = orderDate;
 	}
-
 	public String getStatus() {
 		return status;
 	}
-
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
 	public Integer getQuantity() {
 		return quantity;
 	}
-
 	public void setQuantity(Integer quantity) {
 		this.quantity = quantity;
 	}
-
 	public FoodItem getFoodItem() {
 		return foodItem;
 	}
-
 	public void setFoodItem(FoodItem foodItem) {
 		this.foodItem = foodItem;
 	}
-
 	public User getUser() {
 		return user;
 	}
-
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	public Payment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Payment payment) {
-		this.payment = payment;
-	}
-    
-    
     
 }
 

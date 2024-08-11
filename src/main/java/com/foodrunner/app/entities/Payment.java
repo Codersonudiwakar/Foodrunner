@@ -7,21 +7,24 @@ import jakarta.persistence.*;
 @Entity
 public class Payment {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long paymentId;
+    private String paymentId;
     private Double amount;
     private LocalDateTime paymentDate;
     private String paymentMethod;
     private String paymentStatus;
-
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
+    
 
-	public Payment(Long id, Double amount, LocalDateTime paymentDate, String paymentMethod, String paymentStatus,
-			Order order) {
+	public Payment() {
 		super();
-		this.paymentId = id;
+	}
+
+	public Payment(String paymentId, Double amount, LocalDateTime paymentDate, String paymentMethod,
+			String paymentStatus, Order order) {
+		super();
+		this.paymentId = paymentId;
 		this.amount = amount;
 		this.paymentDate = paymentDate;
 		this.paymentMethod = paymentMethod;
@@ -29,12 +32,12 @@ public class Payment {
 		this.order = order;
 	}
 
-	public Long getId() {
+	public String getPaymentId() {
 		return paymentId;
 	}
 
-	public void setId(Long id) {
-		this.paymentId = id;
+	public void setPaymentId(String paymentId) {
+		this.paymentId = paymentId;
 	}
 
 	public Double getAmount() {
@@ -76,6 +79,7 @@ public class Payment {
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+    
     
     
 

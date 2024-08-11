@@ -13,7 +13,7 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @PostMapping
+    @PostMapping("/addOrder")
     public Order createOrder(@RequestBody Order order) {
         return orderService.saveOrder(order);
     }
